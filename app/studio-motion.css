@@ -136,7 +136,7 @@
 @keyframes art-node-breathe{0%,100%{opacity:.65}50%{opacity:1}}
 @keyframes art-ring-glide{to{rotate:360deg}}
 @keyframes art-ring-glow{0%,100%{opacity:.75}50%{opacity:1}}
-.studio-principles-detail{padding:27px 31px 31px;display:flex;align-items:start;justify-content:space-between;gap:22px;animation:art-arrive .53s ease both}
+.studio-principles-detail{padding:27px 31px 31px;display:flex;align-items:flex-start;justify-content:space-between;gap:22px;animation:art-arrive .53s ease both}
 .studio-principles-detail>div>span{font:800 10px var(--font);letter-spacing:.12em;color:var(--forest-soft)}
 .studio-principles-detail h3{font:800 clamp(24px,2.6vw,38px)/1.05 var(--head);letter-spacing:-.065em;margin:12px 0;color:var(--forest-ink)}
 .studio-principles-detail p{font:500 14px/1.65 var(--font);color:var(--text-soft);max-width:455px;margin:0}
