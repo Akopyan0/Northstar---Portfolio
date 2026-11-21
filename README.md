@@ -2,7 +2,7 @@
 
 An **original light-themed portfolio website** featuring four browser-based interactive demonstrations.
 
-**Live website:** Enable GitHub Pages in **Settings → Pages → Deploy from a branch → main / (root)**. The published URL will be `https://akopyan0.github.io/Northstar---Portfolio/` after GitHub confirms deployment.
+**Live website:** Enable GitHub Pages in **Settings → Pages → Build and deployment → Source: GitHub Actions**. The included workflow `.github/workflows/pages.yml` publishes the site after Pages is enabled. The published URL will be `https://akopyan0.github.io/Northstar---Portfolio/` after GitHub confirms deployment.
 
 ## Interactive showcase
 
