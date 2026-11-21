@@ -1,38 +1,24 @@
-# Northstar Studio — Interactive Freelance Portfolio
+# Northstar Studio — Next.js / TypeScript portfolio
 
-An **original light-themed portfolio website** featuring four browser-based interactive demonstrations.
+A bespoke, responsive digital-product portfolio built with **Next.js App Router**, **TypeScript**, **React**, **Lucide**, and original CSS. This replaces an earlier static HTML prototype.
 
-**Live website:** Enable GitHub Pages in **Settings → Pages → Build and deployment → Source: GitHub Actions**. The included workflow `.github/workflows/pages.yml` publishes the site after Pages is enabled. The published URL will be `https://akopyan0.github.io/Northstar---Portfolio/` after GitHub confirms deployment.
+## Four interactive showcases
+- **Meridian CRM:** Editable sales opportunities, stage transitions, totals, search, CSV export, browser-local persistence.
+- **Mellow Support:** Searchable knowledge-based chat, add articles, honest escalation for unsupported questions.
+- **Sorelle Restaurant:** Menu and localized headline, date/time/party form, simulated capacity-aware reservations.
+- **Flowstate Automation:** Upload CSV (max 2 MB), trim whitespace, remove empty and duplicate rows, export cleaned CSV.
 
-## Interactive showcase
+All demos are **browser-only prototypes**. No real accounts, businesses, restaurants or AI model are connected. Data in CRM, support and booking is stored using localStorage, not a server. Never enter personal data into a public demo.
 
-| Project | Working features in the public website |
-|---|---|
-| **Pulse CRM** | Add and delete opportunities, update live totals, count won deals, save browser-local data, export CSV |
-| **Kindred Support** | Ask questions, retrieve knowledge-base answers, add articles, fallback to human escalation |
-| **Maison Olive** | Browse a sample menu and create capacity-checked, simulated table reservations |
-| **Flow Automation** | Upload/paste CSV, trim fields, remove duplicate/blank rows, download cleaned CSV |
+## Run
+```bash
+npm install
+npm run dev
+```
+Open http://localhost:3000. For production, run `npm run build` then `npm start`.
 
-The website is **static and self-contained**; GitHub Pages needs no Python server, database, API keys or installation. This makes it safe and inexpensive to present the portfolio publicly.
+## Deploy
+Import this repository into Vercel, choose Next.js, root directory `./`, deploy main. Deployment requires npm registry access. Do **not** use GitHub Pages for this non-exported Next.js application.
 
-## Preview locally
-Open `index.html` in a modern browser. You can alternatively run `python -m http.server 8000` and visit `http://localhost:8000`.
-
-## Technical notes
-- HTML, CSS and vanilla JavaScript
-- Responsive design and accessible form labels
-- LocalStorage for browser-only CRM, knowledge-base and booking demonstration data
-- File parsing and download happen entirely inside the browser
-- Web font is served from Google Fonts
-- No accounts, payments, actual restaurant reservations, real AI model or production CRM backend are implied
-
-**Security & privacy:** This is a demonstration. Do not enter real personal or business data. Each visitor only sees their own browser-local data. The support agent is **retrieval-based, not a generative AI**.
-
-## Full backend edition
-A separate local FastAPI/SQLite edition provides multi-page demos, PDF/Excel/ZIP processing, and server-side data storage. It is deliberately **not** hosted publicly without authentication and upload protections. The publicly available site is a browser-safe showcase.
-
-## Attribution
-This site is an original Northstar Studio implementation. Do not misrepresent demo projects as paid client work. Keep notices for any third-party components introduced later.
-
-## License
-MIT. See `LICENSE`.
+## Originality & attribution
+The design, page composition and interactive demos in this repository are custom-authored, not a third-party portfolio template. Icons: Lucide (ISC license). Do not represent demo use cases as paid client engagements. See LICENSE.
