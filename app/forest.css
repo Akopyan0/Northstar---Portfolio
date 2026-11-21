@@ -35,45 +35,12 @@ html[data-theme="forest-citron"]{
  --focus-halo:rgba(94,151,93,.26);
  color-scheme:light;
 }
-html[data-theme="white-green"]{
- --forest:#152a1c;
- --forest-soft:#28523a;
- --forest-ink:#0c1911;
- --citron:#a8d0af;
- --mint:#98c3a7;
- --background:#fff;
- --paper:#fff;
- --surface:#f3f7f3;
- --surface-alt:#e6f0e8;
- --border-color:#d9e4dc;
- --body-ink:#101712;
- --text-soft:#58675e;
- --accent:#77ba8b;
- --accent-ink:#0e2115;
- --accent-hover:#5ea575;
- --chart-accent:#31744d;
- --glow:rgba(59,124,80,.10);
- --shadow-design:rgba(21,51,31,.085);
- --footer-bg:#0d1e14;
- --brand-secondary:#c7e1cc;
- --hero-cta-bg:#152a1c;
- --hero-cta-color:#fff;
- --hero-cta-hover:#284b32;
- --demo-bg:#f4f8f4;
- --surface-line:#e0e9e1;
- --trust-bg:#f5f8f5;
- --card-olive:#e4efe8;
- --card-mint:#e0ece6;
- --card-sand:#eef3ef;
- --focus-halo:rgba(70,140,92,.22);
- color-scheme:light;
-}
 html{background:var(--background)}
 body{background:var(--background);color:var(--body-ink);transition:background-color .38s ease,color .38s ease}
 p{color:var(--text-soft)}
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline-color:var(--forest-soft);outline-offset:3px}
 ::selection{background:var(--citron);color:var(--forest-ink)}
-/* Fixed smart navigation with a discreet, real two-mode selector. */
+/* Fixed smart navigation; Forest & Citron is the single studio palette. */
 .site-header{background:color-mix(in srgb,var(--paper) 94%,transparent);border-color:var(--border-color);box-shadow:0 8px 25px var(--shadow-design);backdrop-filter:blur(18px) saturate(125%)}
 .logo,.navigation-links a{color:var(--forest-ink)}
 .logo>span:last-child{color:var(--forest-soft)}
