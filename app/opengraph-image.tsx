@@ -12,7 +12,7 @@ export default function Image(){
    </div>
    <div style={{display:"flex",flexDirection:"column",zIndex:2}}>
     <div style={{fontWeight:800,fontSize:103,letterSpacing:-8,lineHeight:1.03}}>DESIGN THAT</div>
-    <div style={{fontWeight:800,fontSize:103,letterSpacing:-8,lineHeight:1.03,color:"#2F503A"}}>HITS DIFFERENT<span style={{color:"#D7EF73"}}>.</span></div>
+    <div style={{display:"flex",fontWeight:800,fontSize:103,letterSpacing:-8,lineHeight:1.03,color:"#2F503A"}}>HITS DIFFERENT<span style={{color:"#D7EF73"}}>.</span></div>
     <div style={{fontSize:26,color:"#526054",fontWeight:500,marginTop:25}}>Web experiences. Business systems. Automation.</div>
    </div>
    <div style={{display:"flex",alignItems:"center",gap:20,color:"#526054",fontSize:16,fontWeight:700,letterSpacing:1.5}}>
