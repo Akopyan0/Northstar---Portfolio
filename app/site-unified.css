@@ -1,0 +1,80 @@
+/* Shared Northstar chrome: one site-wide forest/citron header & footer. */
+/* The homepage and all /[slug] routes now mount the identical components. */
+body:has(.studio-page){padding-top:94px!important}
+.site-header{height:93px}
+.site-header .navigation{width:min(1500px,calc(100% - 100px));max-width:none}
+.site-header .navigation-links{gap:clamp(15px,1.8vw,29px)}
+.site-header .navigation-links a{font-size:12px;font-weight:800;white-space:nowrap}
+.site-header .navigation-links a[aria-current="page"]{color:var(--forest-soft)}
+.site-header .nav-actions{margin-left:auto;gap:12px;flex-shrink:0}
+.site-header .nav-cta{background:var(--forest);border-color:var(--forest);color:white;padding:13px 19px;font-size:12px;border-radius:9px;white-space:nowrap}
+.site-header .nav-cta:hover{background:var(--forest-soft);border-color:var(--forest-soft);box-shadow:0 10px 28px var(--shadow-design)}
+.site-header .mobile-menu{color:var(--forest);width:44px;height:44px;align-items:center;justify-content:center}
+.site-footer{background:var(--forest-ink)}
+.site-footer .footer-main{
+ display:grid;
+ grid-template-columns:minmax(0,1.5fr) minmax(170px,.53fr) minmax(190px,.62fr);
+ gap:clamp(30px,4vw,74px);
+ align-items:start;
+ padding:90px 0 80px;
+}
+.site-footer .footer-heading{grid-column:auto;min-width:0;max-width:100%}
+.site-footer .footer-heading .footer-wordmark{
+ display:inline-block;
+ max-width:100%;
+ font:800 clamp(52px,6.4vw,100px)/1 'Syne',var(--head),sans-serif;
+ letter-spacing:-.105em;
+ white-space:nowrap;
+ color:#fafff7;
+}
+.site-footer .footer-wordmark span{color:var(--citron);font:800 15px var(--head);letter-spacing:0;margin-left:7px}
+.site-footer .footer-heading p{margin:24px 0 0;max-width:355px;font:500 14px/1.8 var(--font);color:#a9b8aa}
+.site-footer .footer-column{min-width:0;display:flex;flex-direction:column;gap:17px}
+.site-footer .footer-column>span{display:block;color:#a7b5a5;font:800 10px/1.45 var(--font);letter-spacing:.14em;margin-bottom:8px}
+.site-footer .footer-column a{display:inline-flex;align-items:center;flex-wrap:wrap;gap:9px;font:700 14px/1.55 var(--font);color:#ecf4e9;white-space:normal;width:fit-content;transition:color .24s!important}
+.site-footer .footer-column a svg{flex-shrink:0;color:#adbdad}
+.site-footer .footer-column a:hover,.site-footer .footer-column a:hover svg{color:var(--citron)}
+.site-footer .footer-bottom{border-top:1px solid #ffffff25;padding:25px 0 35px}
+.site-footer .footer-bottom a{color:#eff7e9}
+.studio-page .contact-github-issue{margin-top:12px}
+/* Existing mobile navigation behavior remains the same on every route. */
+@media(max-width:1240px){
+ .site-header .navigation{width:calc(100% - 60px)}
+ .site-header .navigation-links{gap:15px}
+ .site-header .navigation-links a{font-size:11px}
+ .site-header .nav-cta{padding:12px 13px;font-size:11px}
+ .site-footer .footer-main{gap:38px}
+ .site-footer .footer-heading .footer-wordmark{font-size:clamp(49px,6.2vw,85px)}
+}
+@media(max-width:1020px){
+ .site-header .navigation{width:calc(100% - 48px)}
+ .site-header .navigation-links{display:none}
+ .site-header .navigation-links.open{display:flex;position:absolute;top:92px;left:0;right:0;z-index:1200;padding:24px 28px 30px;flex-direction:column;align-items:stretch;gap:19px;background:var(--paper);border-bottom:1px solid var(--border-color);box-shadow:0 20px 32px var(--shadow-design)}
+ .site-header .navigation-links.open a{font-size:14px}
+ .site-header .mobile-menu{display:flex}
+ .site-footer .footer-main{grid-template-columns:1fr 1fr;gap:38px;padding:65px 0 58px}
+ .site-footer .footer-heading{grid-column:1/-1}
+ .site-footer .footer-heading .footer-wordmark{font-size:clamp(60px,9vw,95px)}
+ .site-footer .footer-heading p{margin-top:18px}
+}
+@media(max-width:600px){
+ body:has(.studio-page){padding-top:76px!important}
+ .site-header{height:76px}
+ .site-header .navigation{width:calc(100% - 32px)}
+ .site-header .navigation-links.open{top:75px}
+ .site-header .nav-cta{display:none}
+ .site-header .mobile-menu{display:flex;width:44px;height:44px}
+ .site-header .logo{font-size:27px}
+ .site-footer .footer-main{grid-template-columns:1fr 1fr;gap:32px 22px;padding:60px 0 48px}
+ .site-footer .footer-heading{grid-column:1/-1}
+ .site-footer .footer-heading .footer-wordmark{font-size:clamp(49px,12vw,78px)}
+ .site-footer .footer-column>span{font-size:9px}
+ .site-footer .footer-column a{font-size:12px}
+ .site-footer .footer-column a svg{width:15px;height:15px}
+ .site-footer .footer-bottom{flex-wrap:wrap;gap:12px 20px}
+}
+@media(max-width:375px){
+ .site-footer .footer-heading .footer-wordmark{font-size:44px}
+ .site-footer .footer-main{grid-template-columns:1fr;gap:30px}
+ .site-footer .footer-heading{grid-column:auto}
+}
