@@ -11,6 +11,7 @@ import "./gallery-next.css";
 import "./design-parity.css";
 import "./site-unified.css";
 import "./editorial-refresh.css";
+import "./hero-variants.css";
 import SectionMotion from "./SectionMotion";
 
 const origin="https://northstar-portfolio-studio.vercel.app";
