@@ -12,8 +12,80 @@ const caseKeys=["case-meridian","case-mellow","case-sorelle","case-flowstate"];
 const icons=[LayoutDashboard,Workflow,MessageCircle,Code2,UtensilsCrossed];
 function Subtitle({children}:{children:React.ReactNode}){return <span className="inner-eyebrow"><span/> {children}</span>}
 function BottomCTA({headline="Have something worth building?",cta="Start with a brief"}:{headline?:string;cta?:string}){return <section className="page-bottom-cta"><div className="page-frame"><span className="inner-eyebrow light">NEXT / A GOOD CONVERSATION</span><div className="page-cta-row"><h2>{headline}</h2><Link href="/contact" aria-label={cta}><span>{cta}</span><ArrowUpRight size={23}/></Link></div></div></section>}
-function GlobalNav({active}:{active:string}){const [open,setOpen]=useState(false);return <><header className="inner-header"><div className="page-frame inner-header-row"><Link href="/" className="inner-wordmark" aria-label="Northstar home"><span className="inner-brand-mark">N</span> northstar<span>.</span></Link><nav className={"inner-nav "+(open?"is-open":"")} aria-label="Main navigation"><Link onClick={()=>setOpen(false)} href="/services" aria-current={active==="services"?"page":undefined}>Services</Link><Link onClick={()=>setOpen(false)} href="/work" aria-current={active==="work"?"page":undefined}>Work</Link><Link onClick={()=>setOpen(false)} href="/process" aria-current={active==="process"?"page":undefined}>Process</Link><Link onClick={()=>setOpen(false)} href="/pricing" aria-current={active==="pricing"?"page":undefined}>Pricing</Link><Link onClick={()=>setOpen(false)} href="/studio" aria-current={active==="studio"?"page":undefined}>Studio</Link></nav><div className="inner-header-actions"><Link href="/contact" className="inner-contact">Get in touch <ArrowUpRight size={17}/></Link><button aria-label={open?"Close menu":"Open menu"} aria-expanded={open} className="inner-menu-toggle" onClick={()=>setOpen(v=>!v)}>{open?<Minus size={23}/>:<Plus size={23}/>}</button></div></div></header></>}
-function PageHero({spec}:{spec:PageSpec}){return <section className={"inner-hero inner-hero--"+spec.kind}><div className="page-frame inner-hero-layout"><div className="inner-hero-content"><Subtitle>{spec.eyebrow}</Subtitle><h1>{spec.title}<span>{spec.accent}</span></h1><p>{spec.intro}</p><div className="inner-hero-links"><a href="#explore">Explore the details <ArrowDown size={18}/></a><Link href="/contact">Discuss a project <ArrowUpRight size={18}/></Link></div></div><div className="inner-hero-aside" aria-hidden="true"><span>NS / DIGITAL STUDIO</span><div className="inner-hero-abstract"><i/><i/><i/><b>{spec.kind==="case"?"04":spec.kind==="legal"?"§":spec.kind==="pricing"?"$":"N"}</b></div><strong>{spec.aside}</strong></div></div><div className="inner-hero-corner">NORTHSTAR / 2026 <span>DESIGN-DRIVEN DEVELOPMENT</span></div></section>}
+function GlobalNav({active}:{active:string}){
+ const [open,setOpen]=useState(false);
+ const [theme,setTheme]=useState<"forest-citron"|"white-green">("forest-citron");
+ const [visible,setVisible]=useState(true);
+ useEffect(()=>{
+   try{const stored=localStorage.getItem("northstar-color-theme");const next=stored==="white-green"?"white-green":"forest-citron";setTheme(next);document.documentElement.dataset.theme=next;}catch{document.documentElement.dataset.theme="forest-citron";}
+   let last=window.scrollY;
+   const onScroll=()=>{const y=window.scrollY;if(y<90||y<last-9)setVisible(true);else if(y>170&&y>last+5)setVisible(false);if(Math.abs(y-last)>5)last=y};
+   window.addEventListener("scroll",onScroll,{passive:true});return()=>window.removeEventListener("scroll",onScroll);
+ },[]);
+ const choose=(next:"forest-citron"|"white-green")=>{setTheme(next);document.documentElement.dataset.theme=next;try{localStorage.setItem("northstar-color-theme",next)}catch{}};
+ return <header className={"inner-header "+(visible?"inner-header-visible":"inner-header-hidden")}>
+  <div className="page-frame inner-header-row">
+   <Link href="/" className="inner-wordmark" aria-label="Northstar home"><span className="inner-brand-mark">N</span> northstar<span>.</span></Link>
+   <nav className={"inner-nav "+(open?"is-open":"")} aria-label="Main navigation">
+    <Link onClick={()=>setOpen(false)} href="/">Home</Link>
+    <Link onClick={()=>setOpen(false)} href="/services" aria-current={active==="services"?"page":undefined}>Services</Link>
+    <Link onClick={()=>setOpen(false)} href="/work" aria-current={active==="work"?"page":undefined}>Portfolio</Link>
+    <Link onClick={()=>setOpen(false)} href="/pricing" aria-current={active==="pricing"?"page":undefined}>Pricing</Link>
+    <Link onClick={()=>setOpen(false)} href="/#showcase">Live demos</Link>
+    <Link onClick={()=>setOpen(false)} href="/studio" aria-current={active==="studio"?"page":undefined}>Studio</Link>
+   </nav>
+   <div className="inner-header-actions">
+    <div className="theme-toggle inner-theme-toggle" role="group" aria-label="Color palette">
+      <button type="button" className={theme==="forest-citron"?"is-active":""} aria-pressed={theme==="forest-citron"} onClick={()=>choose("forest-citron")}><span className="theme-swatch citron-swatch"/>Forest</button>
+      <button type="button" className={theme==="white-green"?"is-active":""} aria-pressed={theme==="white-green"} onClick={()=>choose("white-green")}><span className="theme-swatch green-swatch"/>White</button>
+    </div>
+    <Link href="/contact" className="inner-contact">Let&apos;s work together <ArrowUpRight size={17}/></Link>
+    <button aria-label={open?"Close menu":"Open menu"} aria-expanded={open} className="inner-menu-toggle" onClick={()=>setOpen(v=>!v)}>{open?<Minus size={23}/>:<Plus size={23}/>}</button>
+   </div>
+  </div>
+ </header>
+}
+function HeroDashboard({spec}:{spec:PageSpec}){
+ const featured=spec.kind==="pricing"?"PACKAGES":spec.kind==="case"?"CASE STUDY":spec.kind==="legal"||spec.kind==="legal-hub"?"TRANSPARENCY":spec.kind==="work"?"SELECTED WORK":spec.kind==="process"?"THE METHOD":spec.kind==="contact"?"PROJECT BRIEF":"THE STUDIO";
+ const numeric=spec.kind==="pricing"?"03":spec.kind==="work"?"04":spec.kind==="case"?"01—04":spec.kind==="process"?"05":spec.kind==="legal"||spec.kind==="legal-hub"?"03":"NS";
+ return <div className="inner-hero-art">
+  <div className="inner-hero-orbit" aria-hidden="true"/>
+  <div className="inner-hero-art-overline"><span className="inner-art-dot"/> DESIGNED TO MAKE A DIFFERENCE</div>
+  <div className="inner-dashboard" aria-hidden="true">
+   <div className="inner-dashboard-bar"><span className="inner-dashboard-lights"><i/><i/><i/></span><span>northstar / {spec.slug}</span><span className="inner-dash-logo">N</span></div>
+   <div className="inner-dashboard-content">
+    <span className="inner-dash-kicker">{featured} / OVERVIEW</span>
+    <div className="inner-dash-metrics"><div><small>DESIGNED FOR REAL USE</small><strong>{numeric}<em>.</em></strong></div><div className="inner-dashboard-pill">STUDIO / 2026</div></div>
+    <svg viewBox="0 0 500 166" role="img" aria-label="Decorative studio system visualization" className="inner-dashboard-chart">
+     <defs><linearGradient id="northstar-inner-chart-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#688c6d" stopOpacity=".29"/><stop offset="100%" stopColor="#688c6d" stopOpacity="0"/></linearGradient></defs>
+     {[28,66,104,142].map(y=><line key={y} x1="10" y1={y} x2="490" y2={y} className="inner-dash-grid"/>)}
+     <path d="M12 133 C42 132 45 124 76 125 S108 104 146 112 S188 97 216 97 S259 65 286 75 S329 53 359 58 S390 39 414 39 S459 21 488 19 L488 165 L12 165Z" fill="url(#northstar-inner-chart-fill)"/>
+     <path d="M12 133 C42 132 45 124 76 125 S108 104 146 112 S188 97 216 97 S259 65 286 75 S329 53 359 58 S390 39 414 39 S459 21 488 19" className="inner-dash-line" fill="none"/>
+     <circle cx="488" cy="19" r="8" className="inner-dash-focus-ring"/><circle cx="488" cy="19" r="4.5" className="inner-dash-focus"/>
+    </svg>
+    <div className="inner-dashboard-chart-bottom"><span>SYSTEM THINKING / ILLUSTRATIVE</span><span>CRAFTED WITH PURPOSE</span></div>
+   </div>
+  </div>
+  <div className="inner-dashboard-float" aria-hidden="true"><span className="inner-float-icon"><ArrowUpRight size={19}/></span><span><small>NORTHSTAR STUDIO</small><strong>{spec.aside}</strong></span></div>
+ </div>;
+}
+function PageHero({spec}:{spec:PageSpec}){
+ return <section className={"inner-hero inner-hero--"+spec.kind}>
+  <div className="page-frame inner-hero-layout">
+   <div className="inner-hero-content">
+    <div className="hero-badge inner-hero-badge"><span className="badge-spark"><span className="badge-square"/></span>{spec.eyebrow}<span className="badge-pulse"/></div>
+    <h1>{spec.title}<span>{spec.accent}</span></h1>
+    <p>{spec.intro}</p>
+    <div className="inner-hero-links">
+     <a className="inner-hero-primary" href="#explore">Explore this page <ArrowUpRight size={18}/></a>
+     <Link className="inner-hero-secondary" href="/#showcase"><span className="play-circle"><ArrowRight size={16}/></span>Explore live demos</Link>
+    </div>
+   </div>
+   <HeroDashboard spec={spec}/>
+  </div>
+  <div className="inner-hero-corner">NORTHSTAR STUDIO <span>DESIGN / DEVELOPMENT / AUTOMATION</span></div>
+ </section>
+}
 function PackageCards(){const [tier,setTier]=useState(1);const packages=[
  {name:"Foundation",code:"01",price:120,subtitle:"A sharp first impression.",features:["A focused one-page experience","Responsive layout and clear navigation","Basic interaction and metadata","Simple handover notes"],note:"For a small, well-defined launch."},
  {name:"Product",code:"02",price:350,subtitle:"More room for a real workflow.",features:["Multi-section or multi-page interface","Interactive client-side features","One scoped server/API workflow","Responsive review and documentation"],note:"For a practical first release."},
