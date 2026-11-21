@@ -337,17 +337,6 @@
 .studio-page .page-section-head{margin-bottom:45px}
 .studio-page .price-card,.studio-page .case-tile,.studio-page .brief-builder{border-radius:12px}
 
-/* Align the inner pages with the homepage's same theme choice. */
-html[data-theme="white-green"] .studio-page{--page-bg:#fff}
-html[data-theme="white-green"] .studio-page .inner-hero{background:#fff}
-html[data-theme="white-green"] .studio-page .price-layout,
-html[data-theme="white-green"] .studio-page .studio-story,
-html[data-theme="white-green"] .studio-page .process-section,
-html[data-theme="white-green"] .studio-page .faq-section,
-html[data-theme="white-green"] .studio-page .contact-page-section{background:#f4f8f4}
-html[data-theme="white-green"] .studio-page .inner-hero-links .inner-hero-primary{background:var(--forest);color:#fff}
-html[data-theme="white-green"] .studio-page .inner-hero-links .inner-hero-primary:hover{background:var(--forest-soft);color:#fff}
-
 @media(max-width:1200px){
  .studio-page .page-frame{width:calc(100% - 48px)}
  .inner-hero-layout{gap:25px}
