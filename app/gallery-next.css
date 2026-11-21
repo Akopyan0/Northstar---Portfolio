@@ -1,0 +1,114 @@
+/* NORTHSTAR GALLERY 2.0 — A focused editorial carousel.
+   No clipped copy, no dead end at item 04. Previous/next become narrow
+   typographic teaser rails. Central content always remains fully visible. */
+.new-carousel{position:relative;overflow:hidden;padding:0 0 25px}
+.new-carousel-controls{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-bottom:21px}
+.new-carousel-counter{display:flex;align-items:baseline;gap:9px;color:var(--forest)}
+.new-carousel-counter strong{font:800 43px/.9 var(--head);letter-spacing:-.1em}
+.new-carousel-counter>span:nth-child(2){font:800 12px var(--font);color:var(--text-soft)}
+.new-carousel-status{display:inline-flex;align-items:center;gap:8px;font:800 9px var(--font);color:var(--forest-soft);letter-spacing:.15em;margin-left:22px}
+.new-carousel-status span{width:6px;height:6px;border-radius:50%;background:var(--citron);box-shadow:0 0 0 4px var(--glow)}
+.new-carousel .carousel-buttons button{width:48px;height:48px;background:var(--paper);color:var(--forest);border:1px solid var(--border-color);box-shadow:none}
+.new-carousel .carousel-buttons button:hover{background:var(--forest);color:var(--citron);border-color:var(--forest);box-shadow:0 0 0 5px var(--glow)}
+.new-carousel-stage{width:100%;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,min(960px,66vw)) minmax(0,1fr);gap:20px;align-items:stretch;padding:6px 0 18px;outline-offset:4px}
+.new-carousel-side{position:relative;display:flex;flex-direction:column;justify-content:space-between;align-items:start;gap:30px;overflow:hidden;min-width:0;min-height:580px;padding:30px clamp(14px,2vw,36px);border:1px solid var(--border-color);border-radius:12px;background:var(--surface-alt);color:var(--forest);text-align:left;cursor:pointer;transition:border-color .3s,box-shadow .3s,background .3s!important}
+.new-carousel-side:before{content:"";position:absolute;z-index:0;aspect-ratio:1;width:min(320px,150%);border-radius:50%;left:-40%;top:24%;border:1px solid #457b5340;box-shadow:0 0 0 35px #598a5d0c,0 0 0 75px #598a5d0a;background:radial-gradient(circle,var(--citron) 0%,transparent 65%);opacity:.8}
+.new-carousel-side.side-mellow{background:#dce8df}
+.new-carousel-side.side-sorelle{background:#233427;color:#f5faf0}
+.new-carousel-side.side-sorelle:before{background:radial-gradient(circle,#d7ef7340 0%,transparent 65%)}
+.new-carousel-side.side-flowstate{background:#e4e9dc}
+.new-carousel-side.side-meridian{background:#d7e3d6}
+.new-carousel-side>span,.new-carousel-side>strong,.new-carousel-side>svg{z-index:1;position:relative}
+.new-carousel-side>span{font:800 9px/1.5 var(--font);letter-spacing:.11em;white-space:normal}
+.new-carousel-side>strong{font:800 clamp(18px,2vw,32px)/1.05 var(--head);letter-spacing:-.06em;overflow-wrap:anywhere;margin-top:auto}
+.new-carousel-side svg{border:1px solid currentColor;border-radius:50%;padding:9px;width:44px;height:44px}
+.new-carousel-side:hover{border-color:var(--forest-soft);box-shadow:0 10px 32px var(--shadow-design)}
+.new-carousel-side:focus-visible{outline:2px solid var(--forest-soft)}
+.new-carousel-feature{min-width:0;background:var(--paper);border:1px solid var(--border-color);border-radius:13px;overflow:hidden;box-shadow:0 22px 70px var(--shadow-design);animation:gallery-show .66s cubic-bezier(.19,.76,.21,1) both}
+@keyframes gallery-show{from{opacity:.27;filter:blur(13px)}to{opacity:1;filter:blur(0)}}
+.new-carousel-image-wrap{height:450px;border-bottom:1px solid var(--border-color);min-width:0;overflow:hidden}
+.new-carousel-image-wrap>.editorial-poster{height:100%;width:100%;position:relative}
+.new-carousel-image-wrap .poster-crm{left:9%;right:9%;top:19%}
+.new-carousel-image-wrap .poster-flow-title{right:42px}
+.new-carousel-image-wrap .poster-support-title{left:42px}
+.new-carousel-copy{padding:28px 32px 34px;display:flex;align-items:center;justify-content:space-between;gap:35px}
+.new-carousel-copy-heading>span{font:800 10px var(--font);letter-spacing:.15em;color:var(--forest-soft)}
+.new-carousel-copy-heading h3{font:800 clamp(38px,4.2vw,58px)/.99 var(--head);letter-spacing:-.093em;color:var(--forest);margin:8px 0 5px}
+.new-carousel-copy-heading h3 em{font-style:normal;color:var(--forest-soft)}
+.new-carousel-copy-heading p{font:600 13px/1.6 var(--font);color:var(--text-soft);margin:0}
+.new-carousel-links{display:flex;align-items:center;gap:11px;flex-wrap:wrap;justify-content:flex-end}
+.new-carousel-links a,.new-carousel-links button{appearance:none;border:1px solid var(--border-color);background:var(--paper);border-radius:8px;padding:14px 16px;display:inline-flex;align-items:center;gap:13px;white-space:nowrap;font:800 12px var(--font);color:var(--forest);transition:background .3s,color .3s,border-color .3s,box-shadow .3s!important}
+.new-carousel-links button{background:var(--forest);border-color:var(--forest);color:#fff}
+.new-carousel-links a:hover{background:var(--surface-alt);border-color:var(--forest-soft);box-shadow:0 6px 17px var(--shadow-design)}
+.new-carousel-links button:hover{background:var(--forest-soft);color:var(--citron);border-color:var(--forest-soft);box-shadow:0 6px 17px var(--shadow-design)}
+.new-carousel-progress{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:15px}
+.new-carousel-progress-track{display:flex;align-items:center;gap:7px}
+.new-carousel-progress-track button{background:transparent;border:0;padding:8px 0;cursor:pointer;width:34px;display:block}
+.new-carousel-progress-track button span{display:block;height:3px;width:100%;border-radius:99px;background:var(--border-color);transition:background .3s,width .3s!important}
+.new-carousel-progress-track button.is-active{width:80px}
+.new-carousel-progress-track button.is-active span{background:var(--forest-soft)}
+.new-carousel-progress>span{font:800 10px var(--font);color:var(--text-soft);letter-spacing:.13em}
+/* The server responds quickly; the workflow retains a purposeful ambient
+   pulse so the overview does not look like a frozen screenshot. */
+.flow-console.is-idle .flow-data-line i:nth-child(2){animation:flow-data-wave 3.1s ease-in-out infinite}
+.flow-console.is-idle .flow-data-line i:nth-child(5){animation:flow-data-wave 3.1s 1.1s ease-in-out infinite}
+.flow-console.is-idle .flow-core span:nth-child(2){animation:flow-idle-core 4s ease-in-out infinite}
+.flow-console.is-idle .flow-connector span{animation:flow-idle-connect 4s ease-in-out infinite}
+.flow-console.is-complete .flow-data-line i{animation:flow-result-spark 1.4s ease-in-out 2}
+@keyframes flow-data-wave{0%,100%{opacity:.55;filter:brightness(1)}50%{opacity:1;filter:brightness(1.4)}}
+@keyframes flow-idle-core{0%,100%{opacity:.8;box-shadow:0 0 0 8px #d7ef730c}50%{opacity:1;box-shadow:0 0 0 19px #d7ef7303}}
+@keyframes flow-idle-connect{0%,100%{width:22%;opacity:.45}50%{width:70%;opacity:1}}
+@keyframes flow-result-spark{0%,100%{filter:brightness(1)}50%{filter:brightness(1.8)}}
+/* Updated home nav and footer now link to actual individual pages. */
+.navigation-links{gap:22px}
+.navigation-links a{font-size:12px}
+.footer-main{grid-template-columns:minmax(0,1.3fr) minmax(120px,.55fr) minmax(130px,.7fr) minmax(130px,.7fr)}
+@media(max-width:1430px){
+ .new-carousel-stage{grid-template-columns:minmax(0,1fr) minmax(0,min(890px,69vw)) minmax(0,1fr);gap:14px}
+ .new-carousel-side{padding:24px 17px}
+ .new-carousel-copy{padding:25px;gap:20px}
+ .new-carousel-links{gap:8px}
+ .new-carousel-links a,.new-carousel-links button{padding:12px 11px}
+ .footer-main{gap:30px}
+}
+@media(max-width:1100px){
+ .new-carousel-stage{grid-template-columns:98px minmax(0,1fr) 98px;gap:12px}
+ .new-carousel-side{min-height:500px;padding:17px 12px;align-items:center;text-align:center}
+ .new-carousel-side>span{font-size:8px}
+ .new-carousel-side>strong{font-size:16px;overflow-wrap:anywhere}
+ .new-carousel-image-wrap{height:390px}
+ .new-carousel-copy{flex-wrap:wrap}
+ .new-carousel-links{justify-content:flex-start}
+ .footer-main{grid-template-columns:1fr 1fr;gap:40px}
+}
+@media(max-width:850px){
+ .new-carousel-stage{grid-template-columns:0 minmax(0,1fr) 0;gap:0;padding:3px 22px 15px}
+ .new-carousel-side{width:0;padding:0;border:0;opacity:0;min-height:0;pointer-events:none}
+ .new-carousel-image-wrap{height:350px}
+ .new-carousel-feature{max-width:100%}
+ .new-carousel-copy{padding:21px}
+ .new-carousel-copy-heading h3{font-size:43px}
+ .new-carousel-copy-heading p{font-size:12px}
+ .new-carousel-links a,.new-carousel-links button{font-size:11px}
+ .new-carousel-controls,.new-carousel-progress{width:calc(100% - 44px)}
+}
+@media(max-width:600px){
+ .new-carousel-stage{padding:0 12px 10px}
+ .new-carousel-controls,.new-carousel-progress{width:calc(100% - 24px)}
+ .new-carousel-counter strong{font-size:35px}
+ .new-carousel-status{display:none}
+ .new-carousel-image-wrap{height:285px}
+ .new-carousel-image-wrap .poster-meta{font-size:7px}
+ .new-carousel-image-wrap .poster-crm{left:5%;right:5%;top:24%}
+ .new-carousel-image-wrap .poster-flow-title{right:12px}
+ .new-carousel-image-wrap .poster-support-title{left:15px}
+ .new-carousel-copy{flex-direction:column;align-items:stretch;padding:19px;gap:18px}
+ .new-carousel-copy-heading h3{font-size:37px}
+ .new-carousel-links{flex-wrap:nowrap}
+ .new-carousel-links a,.new-carousel-links button{justify-content:center;flex:1;padding:11px 7px;font-size:10px;gap:7px}
+ .new-carousel-progress>span{font-size:8px}
+ .footer-main{grid-template-columns:1fr 1fr}
+}
+@media(prefers-reduced-motion:reduce){
+ .new-carousel-feature,.flow-console.is-idle .flow-data-line i,.flow-console.is-idle .flow-core span,.flow-console.is-idle .flow-connector span,.flow-console.is-complete .flow-data-line i{animation:none!important}
+}
