@@ -176,3 +176,24 @@ body{background:var(--paper);color:var(--ink)}
  .footer-wordmark span{font-size:12px}
 }
 @media(prefers-reduced-motion:reduce){.chart-line{stroke-dasharray:none!important;stroke-dashoffset:0!important}.hero-visual:after{animation:none!important}.reveal-candidate{opacity:1!important;filter:none!important}}
+
+
+/* Meridian's pipeline visualises current CRM data rather than decorative numbers. */
+.pipeline-breakdown{display:grid;grid-template-columns:.9fr 1.1fr;gap:35px;align-items:center;margin:0 0 20px;padding:31px 34px;background:linear-gradient(115deg,#25372e,#36463a);border:1px solid #334b3a;border-radius:12px;color:#fff}
+.pipeline-intro .micro{color:#b8cba9;font-size:9px}
+.pipeline-intro h4{font:700 26px/1.18 var(--head);letter-spacing:-.055em;margin:9px 0 5px;max-width:290px}
+.pipeline-intro p{color:#c2cbc0;font-size:11px;margin:0 0 18px;max-width:260px}
+.pipeline-intro>strong{display:block;font:700 32px var(--head);letter-spacing:-.07em}
+.pipeline-intro>small{color:#aab9a9;font:800 8px var(--font);letter-spacing:.15em}
+.pipeline-meters{display:grid;gap:14px}
+.pipeline-row-head{display:flex;align-items:center;justify-content:space-between;gap:9px;margin-bottom:7px;font-size:10px}
+.pipeline-row-head strong{display:flex;gap:8px;align-items:center;color:#f6f7f3;font-weight:700}
+.pipeline-row-head>span{color:#f4f6f1;font-weight:800}
+.pipeline-row-head small{color:#c6cfbf;font-weight:700;margin-left:7px}
+.pipeline-swatch{width:7px;height:7px;background:var(--citron);border-radius:2px}
+.pipeline-meter{width:100%;height:6px;background:#ffffff21;border-radius:10px;overflow:hidden}
+.pipeline-meter>span{height:100%;display:block;border-radius:10px;background:var(--citron);transition:width .7s cubic-bezier(.2,.8,.2,1)!important}
+.pipeline-proposal .pipeline-swatch,.pipeline-proposal .pipeline-meter>span{background:#bb9eb4}
+.pipeline-qualified .pipeline-swatch,.pipeline-qualified .pipeline-meter>span{background:#9fbda1}
+.pipeline-lead .pipeline-swatch,.pipeline-lead .pipeline-meter>span{background:#c9b9a2}
+@media(max-width:750px){.pipeline-breakdown{grid-template-columns:1fr;padding:23px;gap:22px}.pipeline-intro h4{font-size:23px}.pipeline-intro>strong{font-size:28px}}
