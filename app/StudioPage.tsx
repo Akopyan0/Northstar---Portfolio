@@ -13,64 +13,24 @@ const icons=[LayoutDashboard,Workflow,MessageCircle,Code2,UtensilsCrossed];
 function Subtitle({children}:{children:React.ReactNode}){return <span className="inner-eyebrow"><span/> {children}</span>}
 function BottomCTA({headline="Have something worth building?",cta="Start with a brief"}:{headline?:string;cta?:string}){return <section className="page-bottom-cta"><div className="page-frame"><span className="inner-eyebrow light">NEXT / A GOOD CONVERSATION</span><div className="page-cta-row"><h2>{headline}</h2><Link href="/contact" aria-label={cta}><span>{cta}</span><ArrowUpRight size={23}/></Link></div></div></section>}
 function HeroDashboard({spec}:{spec:PageSpec}){
- const category=spec.kind==="case"?"CASE STUDY":spec.kind==="legal"||spec.kind==="legal-hub"?"TRANSPARENCY":spec.kind==="pricing"?"SCOPE & ESTIMATES":spec.kind==="contact"?"START A CONVERSATION":spec.kind==="work"?"FEATURED PROJECTS":"THE STUDIO";
- const story=spec.tags?.slice(0,4)??[];
- return <div className={"inner-hero-art inner-hero-art--"+spec.kind}>
+ const featured=spec.kind==="pricing"?"PACKAGES":spec.kind==="case"?"CASE STUDY":spec.kind==="legal"||spec.kind==="legal-hub"?"TRANSPARENCY":spec.kind==="work"?"SELECTED WORK":spec.kind==="process"?"THE METHOD":spec.kind==="contact"?"PROJECT BRIEF":"THE STUDIO";
+ const numeric=spec.kind==="pricing"?"03":spec.kind==="work"?"04":spec.kind==="case"?"01—04":spec.kind==="process"?"05":spec.kind==="legal"||spec.kind==="legal-hub"?"03":"NS";
+ return <div className="inner-hero-art">
   <div className="inner-hero-orbit" aria-hidden="true"/>
-  <div className="inner-hero-art-overline"><span className="inner-art-dot"/> ART DIRECTED / BUILT WITH PURPOSE</div>
+  <div className="inner-hero-art-overline"><span className="inner-art-dot"/> DESIGNED TO MAKE A DIFFERENCE</div>
   <div className="inner-dashboard" aria-hidden="true">
    <div className="inner-dashboard-bar"><span className="inner-dashboard-lights"><i/><i/><i/></span><span>northstar / {spec.slug}</span><span className="inner-dash-logo">N</span></div>
-   <div className={"inner-dashboard-content inner-dashboard-content--"+spec.kind}>
-    <span className="inner-dash-kicker">{category} / NORTHSTAR STUDIO</span>
-    {spec.kind==="pricing"?
-      <div className="inner-art-pricing">
-       <div className="inner-art-pricing-title">GOOD WORK.<br/><em>CLEAR SCOPE.</em></div>
-       <div className="inner-art-pricing-row"><span>01 / FOUNDATION</span><strong>$120<small> FROM</small></strong></div>
-       <div className="inner-art-pricing-row"><span>02 / PRODUCT</span><strong>$350<small> FROM</small></strong></div>
-       <div className="inner-art-pricing-bottom">ESTIMATES, NOT CHECKOUT PRICES <span>→</span></div>
-      </div>
-    :spec.kind==="work"?
-      <div className="inner-art-work">
-       <strong>SELECTED<br/>WORK<span>.</span></strong>
-       {["MERIDIAN / BUSINESS","MELLOW / SUPPORT","SORELLE / HOSPITALITY","FLOWSTATE / DATA"].map((t,i)=><div className="inner-art-work-row" key={t}><small>0{i+1}</small><span>{t}</span><ArrowUpRight size={14}/></div>)}
-      </div>
-    :spec.kind==="process"?
-      <div className="inner-art-process">
-       <strong>FROM IDEA<br/>TO IMPACT<span>.</span></strong>
-       {["DISCOVER","DEFINE","DESIGN","BUILD","HAND OVER"].map((t,i)=><div className="inner-art-process-line" key={t}><span>0{i+1}</span><b>{t}</b><span>{i===4?"✓":"→"}</span></div>)}
-      </div>
-    :spec.kind==="studio"||spec.kind==="services"?
-      <div className="inner-art-editorial">
-       <div className="inner-art-editorial-no">N<span>.</span></div>
-       <div className="inner-art-editorial-copy"><small>FORM & FUNCTION</small><strong>LESS NOISE.<br/>MORE MEANING.</strong><p>Clarity. Craft. A point of view.</p></div>
-      </div>
-    :spec.kind==="legal"||spec.kind==="legal-hub"||spec.kind==="faq"?
-      <div className="inner-art-legal">
-       <div className="inner-art-legal-mark">§</div>
-       <strong>GOOD WORK<br/>IS CLEAR<span>.</span></strong>
-       <div className="inner-art-legal-rule"><span>PRIVACY</span><span>TERMS</span><span>ACCESSIBILITY</span></div>
-      </div>
-    :spec.kind==="contact"?
-      <div className="inner-art-contact">
-       <small>PROJECT BRIEF / FIRST STEP</small>
-       <strong>WHAT ARE<br/>YOU BUILDING<span>?</span></strong>
-       <div className="inner-art-contact-rule">01 / TELL US THE PROBLEM <ArrowUpRight size={17}/></div>
-       <div className="inner-art-contact-rule">02 / DEFINE THE OPPORTUNITY <ArrowUpRight size={17}/></div>
-      </div>
-    :spec.kind==="specialty"?
-      <div className="inner-art-specialty">
-       <strong>{spec.accent}<span>.</span></strong>
-       <div className="inner-art-specialty-tags">{(story.length?story:["DESIGN","ENGINEERING","DETAILS","DELIVERY"]).map((t,i)=><span key={i}>{String(i+1).padStart(2,"0")} / {t}</span>)}</div>
-      </div>
-    :
-      <div className="inner-art-case">
-       <small>STUDY / {spec.project?.toUpperCase()??"NORTHSTAR"}</small>
-       <strong>{spec.accent}<span>.</span></strong>
-       <p>{spec.aside}</p>
-       <div className="inner-art-case-bottom"><span>INTENTION</span><span>INTERACTION</span><span>RESULT</span></div>
-      </div>
-    }
-    <div className="inner-dashboard-chart-bottom"><span>DESIGN NOTES / {spec.slug.toUpperCase()}</span><span>BUILT TO BE USED</span></div>
+   <div className="inner-dashboard-content">
+    <span className="inner-dash-kicker">{featured} / OVERVIEW</span>
+    <div className="inner-dash-metrics"><div><small>DESIGNED FOR REAL USE</small><strong>{numeric}<em>.</em></strong></div><div className="inner-dashboard-pill">STUDIO / 2026</div></div>
+    <svg viewBox="0 0 500 166" role="img" aria-label="Decorative studio system visualization" className="inner-dashboard-chart">
+     <defs><linearGradient id="northstar-inner-chart-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#688c6d" stopOpacity=".29"/><stop offset="100%" stopColor="#688c6d" stopOpacity="0"/></linearGradient></defs>
+     {[28,66,104,142].map(y=><line key={y} x1="10" y1={y} x2="490" y2={y} className="inner-dash-grid"/>)}
+     <path d="M12 133 C42 132 45 124 76 125 S108 104 146 112 S188 97 216 97 S259 65 286 75 S329 53 359 58 S390 39 414 39 S459 21 488 19 L488 165 L12 165Z" fill="url(#northstar-inner-chart-fill)"/>
+     <path d="M12 133 C42 132 45 124 76 125 S108 104 146 112 S188 97 216 97 S259 65 286 75 S329 53 359 58 S390 39 414 39 S459 21 488 19" className="inner-dash-line" fill="none"/>
+     <circle cx="488" cy="19" r="8" className="inner-dash-focus-ring"/><circle cx="488" cy="19" r="4.5" className="inner-dash-focus"/>
+    </svg>
+    <div className="inner-dashboard-chart-bottom"><span>SYSTEM THINKING / ILLUSTRATIVE</span><span>CRAFTED WITH PURPOSE</span></div>
    </div>
   </div>
   <div className="inner-dashboard-float" aria-hidden="true"><span className="inner-float-icon"><ArrowUpRight size={19}/></span><span><small>NORTHSTAR STUDIO</small><strong>{spec.aside}</strong></span></div>
