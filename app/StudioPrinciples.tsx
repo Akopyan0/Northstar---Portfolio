@@ -1,6 +1,6 @@
 "use client";
 import {useState} from "react";
-import {ArrowUpRight,Check,Compass,Code2,GitBranch} from "lucide-react";
+import {ArrowUpRight,Check,Compass,Code2} from "lucide-react";
 
 type Principle="intent"|"craft"|"growth";
 const chapters: {id:Principle;number:string;name:string;sub:string;tag:string}[]=[
@@ -14,49 +14,45 @@ const details:Record<Principle,{headline:string;description:string;accent:string
  growth:{headline:"Designed for what comes next.",description:"Flexible patterns and intentional foundations help products mature.",accent:"TODAY / TOMORROW"}
 };
 function PrincipleArtwork({selected}:{selected:Principle}){
+ const chapter=chapters.find(c=>c.id===selected);
  return <div className={"principle-art principle-art--"+selected}>
-   <div className="principle-art-top"><span>NS—STUDIO / STUDIES</span><span>{details[selected].accent}</span></div>
-   <div className="principle-art-visual" key={selected}>
-   {selected==="intent"&&<svg viewBox="0 0 560 296" role="img" aria-label="Precision layout study: geometric circles intersect on a measured grid">
-      <defs><pattern id="ns-grid-intent" width="29" height="29" patternUnits="userSpaceOnUse"><path d="M29 0H0V29" fill="none" stroke="currentColor" strokeOpacity=".16" strokeWidth=".65"/></pattern></defs>
-      <rect x="1" y="1" width="558" height="294" fill="url(#ns-grid-intent)"/>
-      <circle className="art-ring art-ring-a" cx="272" cy="145" r="111" fill="none" stroke="currentColor" strokeOpacity=".5" strokeWidth="1.3"/>
-      <circle className="art-ring art-ring-b" cx="272" cy="145" r="77" fill="none" stroke="currentColor" strokeOpacity=".6" strokeWidth="1.3"/>
-      <circle className="art-ring art-ring-c" cx="272" cy="145" r="43" fill="none" stroke="var(--citron)" strokeWidth="4"/>
-      <path className="art-draw" d="M115 145H429M272 0V296" fill="none" stroke="currentColor" strokeOpacity=".6"/>
-      <path className="art-draw" d="M185 59L358 232M358 59L185 232" fill="none" stroke="var(--citron)" strokeOpacity=".8" strokeWidth="1.8"/>
-      <rect x="242" y="115" width="60" height="60" rx="3" fill="var(--citron)" stroke="var(--citron)"/>
-      <path d="M256 146h32M272 130v32" stroke="var(--forest)" strokeWidth="2"/>
-      <circle cx="272" cy="145" r="127" stroke="currentColor" strokeOpacity=".25" strokeDasharray="3 8" fill="none"/>
-      <text x="25" y="40" className="principle-art-svg-label">GRID / 01</text><text x="437" y="267" className="principle-art-svg-label">ALIGNMENT</text>
-    </svg>}
-   {selected==="craft"&&<svg viewBox="0 0 560 296" role="img" aria-label="Engineering study: interconnected modules and a flowing signal">
-      <defs><pattern id="ns-grid-craft" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="currentColor" strokeOpacity=".12" strokeWidth=".65"/></pattern></defs>
-      <rect x="1" y="1" width="558" height="294" fill="url(#ns-grid-craft)"/>
-      <path className="art-signal" d="M60 147H158C188 147 188 70 225 70H323C360 70 360 147 396 147H502" fill="none" stroke="var(--citron)" strokeWidth="2.5" strokeLinecap="round" strokeDasharray="10 8"/>
-      <path d="M60 180H175C204 180 203 226 242 226H328C365 226 367 180 399 180H502" fill="none" stroke="currentColor" strokeOpacity=".45" strokeWidth="1.4"/>
-      <rect x="167" y="110" width="80" height="72" rx="6" fill="var(--forest-soft)" stroke="currentColor" strokeOpacity=".6"/>
-      <rect x="249" y="110" width="80" height="72" rx="6" fill="var(--forest-soft)" stroke="var(--citron)" strokeWidth="1.6"/>
-      <rect x="331" y="110" width="80" height="72" rx="6" fill="var(--forest-soft)" stroke="currentColor" strokeOpacity=".6"/>
-      <path className="art-draw" d="M186 136h42m-42 11h26m56-11h42m-42 11h28m58-11h40m-40 11h24" stroke="currentColor" strokeWidth="2" opacity=".75"/>
-      <circle className="art-pulse" cx="289" cy="147" r="10" fill="var(--citron)"/>
-      <circle cx="289" cy="147" r="3" fill="var(--forest)"/>
-      <text x="30" y="42" className="principle-art-svg-label">SYSTEM / 02</text><text x="419" y="271" className="principle-art-svg-label">FLOW STATE</text>
-    </svg>}
-   {selected==="growth"&&<svg viewBox="0 0 560 296" role="img" aria-label="Growth study: a branching architecture diagram expanding from one core">
-      <defs><pattern id="ns-grid-growth" width="27" height="27" patternUnits="userSpaceOnUse"><path d="M27 0H0V27" fill="none" stroke="currentColor" strokeOpacity=".12" strokeWidth=".65"/></pattern></defs>
-      <rect x="1" y="1" width="558" height="294" fill="url(#ns-grid-growth)"/>
-      <path className="art-draw" d="M100 148H205Q226 148 226 126V75H326M226 148H326M226 148V218H326" stroke="currentColor" strokeWidth="1.6" fill="none"/>
-      <path className="art-draw" d="M355 75H445M355 148H445M355 218H445" stroke="var(--citron)" strokeWidth="2" fill="none"/>
-      <rect x="73" y="119" width="70" height="58" rx="10" fill="var(--citron)"/>
-      <path d="M91 148h34m-17-17v34" stroke="var(--forest)" strokeWidth="2"/>
-      {[75,148,218].map((y,i)=><g key={i}><rect x="320" y={y-22} width="69" height="44" rx="8" stroke="currentColor" strokeOpacity=".9" fill="var(--forest-soft)"/><circle cx="354" cy={y} r="6" fill="var(--citron)"/><circle className="art-pulse" cx="445" cy={y} r="6" fill="var(--citron)"/></g>)}
-      <path d="M463 42v202" stroke="currentColor" strokeDasharray="3 7" strokeOpacity=".25"/>
-      <text x="27" y="37" className="principle-art-svg-label">SCALE / 03</text><text x="421" y="270" className="principle-art-svg-label">EVOLUTION</text>
-    </svg>}
-   </div>
-   <div className="principle-art-caption"><span>FIG. {chapters.find(c=>c.id===selected)?.number} / A STUDY IN {selected.toUpperCase()}</span><span className="principle-art-signal"><span/> ACTIVE SYSTEM</span></div>
- </div>
+  <div className="principle-art-top"><span>NORTHSTAR / DESIGN NOTES</span><span>{details[selected].accent}</span></div>
+  <div className="principle-art-visual editorial-study" key={selected}>
+   {selected==="intent"&&<div className="study-type" aria-label="Typographic hierarchy and spacing study">
+     <div className="study-type-top"><span>01 / VISUAL HIERARCHY</span><span>FORM FOLLOWS INTENTION</span></div>
+     <div className="study-type-layout">
+      <span className="study-type-vertical">DESIGN SYSTEM / EXERCISE NO. 01</span>
+      <div className="study-type-composition"><small>A NORTHSTAR DESIGN STUDY</small><strong>LESS,<br/><em>BUT</em> BETTER<span>.</span></strong><p>Every element needs a purpose.<br/>Every space needs room to breathe.</p></div>
+      <div className="study-type-scale"><span>01</span><span>64</span><span>16</span><span>08</span></div>
+     </div>
+     <div className="study-type-bottom"><span>HIERARCHY</span><span>CONTRAST</span><span>RHYTHM</span><span>CLARITY</span></div>
+    </div>}
+   {selected==="craft"&&<div className="study-craft" aria-label="Engineering craft illustrated by an actual product interface layout">
+     <div className="study-craft-head"><span>02 / A PRODUCT THAT WORKS</span><span>FUNCTION OVER FRICTION</span></div>
+     <div className="study-craft-window">
+      <div className="study-craft-sidebar"><b>N.</b><span>01</span><span>02</span><span>03</span></div>
+      <div className="study-craft-dashboard"><div className="study-craft-caption"><span>WORKSPACE / OVERVIEW</span><span>● LIVE DEMO</span></div>
+       <strong>Clear data.<br/>Better choices.</strong>
+       <div className="study-craft-line"><span>PIPELINE HEALTH</span><span>82%</span></div>
+       <div className="study-craft-progress"><span/></div>
+       <div className="study-craft-foot"><span>01 / RESEARCH</span><span>02 / DESIGN</span><span>03 / BUILD</span></div>
+      </div>
+     </div>
+     <div className="study-craft-bottom"><span>DESIGN</span><span>+</span><span>ENGINEERING</span><span>=</span><strong>USEFUL</strong></div>
+    </div>}
+   {selected==="growth"&&<div className="study-growth" aria-label="Visual product roadmap from prototype to scalable system">
+     <div className="study-growth-head"><span>03 / BUILT FOR WHAT'S NEXT</span><span>PRODUCT EVOLUTION</span></div>
+     <div className="study-growth-hero"><span>FROM FIRST IDEA<br/>TO WHAT COMES NEXT</span><strong>EVOLVE<span>.</span></strong></div>
+     <div className="study-growth-track">
+      <div><span>01 / START</span><strong>Idea</strong><small>A focused first version</small></div>
+      <div><span>02 / SHAPE</span><strong>Product</strong><small>Designed around people</small></div>
+      <div><span>03 / EXPAND</span><strong>System</strong><small>Room for what follows</small></div>
+     </div>
+     <div className="study-growth-footer"><span>DESIGNED TO ADAPT</span><span>NOT JUST TO LAUNCH</span></div>
+    </div>}
+  </div>
+  <div className="principle-art-caption"><span>STUDY {chapter?.number} / {chapter?.tag}</span><span className="principle-art-signal"><span/> DESIGNED WITH INTENT</span></div>
+ </div>;
 }
 export default function StudioPrinciples(){
  const [active,setActive]=useState<Principle>("intent");
