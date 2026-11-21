@@ -1,7 +1,7 @@
 "use client";
 import {useState,useEffect,useMemo,useRef} from "react";
 import {ArrowUpRight,ArrowRight,ArrowDownRight,ArrowLeft,ChevronLeft,Sparkles,Command,LayoutDashboard,MessagesSquare,UtensilsCrossed,Workflow,ChevronRight,Menu,X,Check,Plus,Download,Trash2,Search,CalendarDays,Clock3,Users,Send,ShieldCheck,FileSpreadsheet,BarChart3,TrendingUp,Filter,Heart,Mail,Instagram,Github,Play,Layers,Globe2,MousePointer2,CheckCircle2} from "lucide-react";
-import {SiNextdotjs,SiTypescript,SiReact,SiPython,SiJavascript,SiNodedotjs,SiHtml5,SiCss3,SiPostgresql,SiDocker} from "react-icons/si";
+import {SiNextdotjs,SiTypescript,SiReact,SiPython,SiJavascript,SiNodedotjs,SiHtml5,SiCss,SiPostgresql,SiDocker} from "react-icons/si";
 type Work = "crm"|"support"|"restaurant"|"automation";
 type Deal={id:string,name:string,company:string,value:number,stage:"Lead"|"Qualified"|"Proposal"|"Won"};
 const initialDeals:Deal[]=[{id:"1",name:"Ava Thompson",company:"Linear Creative",value:5600,stage:"Proposal"},{id:"2",name:"Noah Williams",company:"Maison Store",value:3200,stage:"Qualified"},{id:"3",name:"Mia Chen",company:"Bright Agency",value:8900,stage:"Won"},{id:"4",name:"Leo Martin",company:"Wave Studio",value:2100,stage:"Lead"}];
@@ -151,7 +151,7 @@ type ThemeName="forest-citron"|"white-green";
 const technologyStack=[
  {label:"Next.js",Icon:SiNextdotjs},{label:"TypeScript",Icon:SiTypescript},{label:"React",Icon:SiReact},
  {label:"Python",Icon:SiPython},{label:"JavaScript",Icon:SiJavascript},{label:"Node.js",Icon:SiNodedotjs},
- {label:"HTML5",Icon:SiHtml5},{label:"CSS3",Icon:SiCss3},{label:"PostgreSQL",Icon:SiPostgresql},{label:"Docker",Icon:SiDocker}
+ {label:"HTML5",Icon:SiHtml5},{label:"CSS3",Icon:SiCss},{label:"PostgreSQL",Icon:SiPostgresql},{label:"Docker",Icon:SiDocker}
 ];
 function TechTicker(){
  const groups=[0,1];
