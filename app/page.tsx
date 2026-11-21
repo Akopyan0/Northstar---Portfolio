@@ -167,7 +167,7 @@ function ProjectCarousel({onExplore}:{onExplore:(kind:Work)=>void}){
  },[length]);
  const active=projects[index],previous=projects[(index-1+length)%length],next=projects[(index+1)%length];
  return <section className="new-carousel" aria-label="Selected projects" onMouseEnter={()=>{paused.current=true}} onMouseLeave={()=>{paused.current=false}} onFocusCapture={()=>{paused.current=true}} onBlurCapture={()=>{paused.current=false}}>
-   <div className="container new-carousel-controls"><div className="new-carousel-counter"><strong>{active.number}</strong><span>/ 0{length}</span><span className="new-carousel-status"><span/> IN FOCUS</span></div><div className="carousel-buttons"><button type="button" aria-label="Previous project" onClick={()=>go(index-1)}><ChevronLeft size={21}/></button><button type="button" aria-label="Next project" onClick={()=>go(index+1)}><ChevronRight size={21}/></button></div></div>
+   <div className="container new-carousel-controls"><div className="new-carousel-counter"><strong>{active.number}</strong><span>/ 0{length}</span><span className="new-carousel-status"><span/> IN FOCUS</span></div><div className="carousel-buttons new-gallery-arrows"><button type="button" aria-label={"Previous project: "+previous.name} onClick={()=>go(index-1)}><ChevronLeft size={21}/><span>{previous.name}</span></button><button type="button" aria-label={"Next project: "+next.name} onClick={()=>go(index+1)}><span>{next.name}</span><ChevronRight size={21}/></button></div></div>
    <div className="new-carousel-stage" tabIndex={0} aria-roledescription="carousel" aria-label="Project spotlight; use left and right arrow keys" onKeyDown={e=>{if(e.key==="ArrowLeft"){e.preventDefault();go(index-1)}else if(e.key==="ArrowRight"){e.preventDefault();go(index+1)}}}
      onTouchStart={e=>{touchStart.current=e.touches[0]?.clientX??null;paused.current=true}}
      onTouchEnd={e=>{const start=touchStart.current;if(start!==null){const delta=e.changedTouches[0].clientX-start;if(Math.abs(delta)>45)go(index+(delta<0?1:-1))}touchStart.current=null;paused.current=false}}>
@@ -184,7 +184,7 @@ function ProjectCarousel({onExplore}:{onExplore:(kind:Work)=>void}){
     </article>
     <button className={"new-carousel-side new-carousel-side-right side-"+next.theme} onClick={()=>go(index+1)} aria-label={"View next: "+next.name}><span>NEXT / {next.number}</span><strong>{next.name}</strong><ArrowRight size={21}/></button>
    </div>
-   <div className="container new-carousel-progress"><div className="new-carousel-progress-track">{projects.map((p,i)=><button type="button" className={i===index?"is-active":""} aria-label={"Show "+p.name} aria-current={i===index?"true":undefined} onClick={()=>go(i)} key={p.id}><span/></button>)}</div><span>SELECTED WORK / 2026</span></div>
+   <div className="container new-carousel-progress"><div className="new-carousel-progress-track">{projects.map((p,i)=><button type="button" className={i===index?"is-active":""} aria-label={"Show "+p.name} aria-current={i===index?"true":undefined} onClick={()=>go(i)} key={p.id}><span/></button>)}</div><div className="new-gallery-project-pager"><button type="button" onClick={()=>go(index-1)}><ArrowLeft size={15}/> {previous.name}</button><span>SCROLL THROUGH ALL 04 PROJECTS</span><button type="button" onClick={()=>go(index+1)}>{next.name} <ArrowRight size={15}/></button></div></div>
  </section>;
 }
 
