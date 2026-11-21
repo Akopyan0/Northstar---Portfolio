@@ -9,7 +9,36 @@ type Article={q:string,a:string};type Chat={role:"user"|"assistant",text:string}
 const seedChat:Chat[]=[{role:"assistant",text:"Hey there! 👋 I'm here to help. Ask me about pricing, shipping, refunds or support hours."}];
 const works:[Work,string,string,string][]=[["crm","Meridian CRM","Sales intelligence","An intuitive workspace to grow customer relationships and turn insights into revenue."],["support","Mellow AI","Customer experience","A considerate support experience powered by a searchable knowledge base."],["restaurant","Sorelle","Hospitality & dining","An elegant restaurant experience, from discovery to your reserved table."],["automation","Flowstate","Productivity tools","A smarter way to clean, organize and export your everyday data."]];
 const cash=(n:number)=>new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:0}).format(n);
-function useStored<T>(key:string, initial:T){const [state,setState]=useState<T>(initial);const mounted=useRef(false);useEffect(()=>{try{const val=localStorage.getItem("northstar-v3-"+key);if(val)setState(JSON.parse(val) as T)}catch{} mounted.current=true},[key]);useEffect(()=>{if(mounted.current)try{localStorage.setItem("northstar-v3-"+key,JSON.stringify(state))}catch{}},[key,state]);return [state,setState] as const}
+function useStored<T>(key:string, initial:T){
+  const [state,setState]=useState<T>(initial);
+  const ready=useRef(false);
+  const [hydrated,setHydrated]=useState(false);
+  useEffect(()=>{
+    let active=true;
+    (async()=>{
+      let fallback=initial;
+      try{const local=localStorage.getItem("northstar-v3-"+key);if(local)fallback=JSON.parse(local) as T;}catch{}
+      try{
+        const response=await fetch("/api/workspace?kind="+encodeURIComponent(key),{cache:"no-store"});
+        if(response.ok){
+          const body=await response.json() as {data:T|null};
+          if(active)setState(body.data??fallback);
+        } else if(active)setState(fallback);
+      }catch{if(active)setState(fallback)}
+      if(active){ready.current=true;setHydrated(true)}
+    })();
+    return()=>{active=false;ready.current=false};
+  },[key]);
+  useEffect(()=>{
+    if(!hydrated||!ready.current)return;
+    try{localStorage.setItem("northstar-v3-"+key,JSON.stringify(state))}catch{}
+    const timer=setTimeout(()=>{
+      fetch("/api/workspace?kind="+encodeURIComponent(key),{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify(state)}).catch(()=>{});
+    },500);
+    return()=>clearTimeout(timer);
+  },[key,state,hydrated]);
+  return [state,setState] as const;
+}
 function IconMark(){return <span className="mark"><span className="mark-star">✳</span></span>}
 function SectionTitle({eyebrow,title,desc}:{eyebrow:string,title:string,desc:string}){return <div className="section-title"><span className="eyebrow"><span className="eyebrow-line"/> {eyebrow}</span><h2>{title}</h2><p>{desc}</p></div>}
 function DownloadCSV(rows:string[][],filename:string){const csv=rows.map(row=>row.map(s=>/[,"\n\r]/.test(s)?'"'+s.replaceAll('"','""')+'"':s).join(",")).join("\r\n");const a=document.createElement("a");const url=URL.createObjectURL(new Blob(["\ufeff"+csv],{type:"text/csv;charset=utf-8"}));a.href=url;a.download=filename;a.click();setTimeout(()=>URL.revokeObjectURL(url),500)}
