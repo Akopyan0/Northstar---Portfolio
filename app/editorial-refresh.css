@@ -274,11 +274,28 @@ section[id]{scroll-margin-top:115px}
  .site-header .navigation-links a{font-size:clamp(12px,.98vw,14px)}
  .site-header .nav-cta{font-size:12px;padding:12px 14px}
 }
-@media(max-width:1050px){
+@media(max-width:1150px){
  .site-header .navigation-links{display:none}
- .site-header .navigation-links.open{display:flex}
+ .site-header .navigation-links.open{
+  display:flex;
+  position:absolute;
+  top:92px;
+  left:0;
+  right:0;
+  z-index:1200;
+  flex-direction:column;
+  align-items:stretch;
+  gap:12px;
+  padding:23px 29px 28px;
+  border-bottom:1px solid var(--border-color);
+  background:var(--paper);
+  box-shadow:0 20px 32px var(--shadow-design);
+ }
  .site-header .navigation-links.open a{font-size:16px;padding:10px 4px}
  .site-header .mobile-menu{display:flex}
+}
+@media(max-width:600px){
+ .site-header .navigation-links.open{top:75px}
 }
 @media(max-width:900px){
  .restaurant-demo .rest-content{gap:20px;padding:24px 8px 31px}
