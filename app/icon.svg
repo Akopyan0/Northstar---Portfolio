@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="Northstar Studio logo">
+<rect x="7" y="7" width="50" height="50" rx="13" transform="rotate(-7 32 32)" fill="#203328"/>
+<path d="M21 46V18h7.8l13.4 17.1V18H49v28h-7.9L27.8 29v17H21Z" fill="#FCFCF8"/>
+<circle cx="51" cy="12" r="4" fill="#D7EF73"/>
+</svg>
