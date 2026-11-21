@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="455" viewBox="0 0 1440 455" role="img" aria-labelledby="title desc">
+<title id="title">Four Northstar interactive product demonstrations</title>
+<desc id="desc">Four editorial showcase panels: Meridian CRM, Mellow Support, Sorelle hospitality, and Flowstate automation.</desc>
+<defs><linearGradient id="soft" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#eff4e8"/><stop offset="1" stop-color="#e3e9dc"/></linearGradient></defs>
+<rect width="1440" height="455" rx="24" fill="#f7f8f3"/>
+<rect x="17" y="17" width="339" height="421" rx="14" fill="#e7eee0" stroke="#cbd8c9"/>
+<rect x="373" y="17" width="339" height="421" rx="14" fill="#dfe9df" stroke="#cbd8c9"/>
+<rect x="729" y="17" width="339" height="421" rx="14" fill="#172a1d"/>
+<rect x="1085" y="17" width="339" height="421" rx="14" fill="#e4e8dc" stroke="#cbd8c9"/>
+<g font-family="Arial, sans-serif" font-weight="800" letter-spacing="2.1" font-size="11" fill="#526b57">
+ <text x="41" y="52">01 / BUSINESS INTELLIGENCE</text><text x="397" y="52">02 / CUSTOMER EXPERIENCE</text><text x="1109" y="52">04 / DATA WORKFLOW</text>
+</g><text x="753" y="52" font-family="Arial, sans-serif" font-weight="800" letter-spacing="2.1" font-size="11" fill="#b4cbb8">03 / HOSPITALITY</text>
+<g>
+ <rect x="41" y="83" width="291" height="212" rx="11" fill="#fbfdf8" stroke="#d1ddce"/>
+ <rect x="41" y="83" width="66" height="212" rx="11" fill="#1e3425"/><rect x="96" y="83" width="11" height="212" fill="#1e3425"/>
+ <text x="64" y="116" font-family="Arial" font-size="20" font-weight="900" fill="#d7ef73">M.</text>
+ <g stroke="#a0c6a0" stroke-width="4" stroke-linecap="round" opacity=".75"><path d="M62 145h20M62 166h20M62 187h20M62 208h20"/></g>
+ <text x="126" y="111" font-family="Arial" font-weight="800" font-size="9" letter-spacing="1" fill="#67806a">SALES OVERVIEW</text>
+ <text x="123" y="154" font-family="Arial" font-weight="900" font-size="33" letter-spacing="-2" fill="#223829">$48,290</text>
+ <g fill="#c0d2b9"><rect x="127" y="233" width="14" height="35" rx="3"/><rect x="147" y="214" width="14" height="54" rx="3"/><rect x="167" y="220" width="14" height="48" rx="3"/><rect x="187" y="193" width="14" height="75" rx="3"/><rect x="207" y="207" width="14" height="61" rx="3"/><rect x="227" y="183" width="14" height="85" rx="3"/><rect x="247" y="195" width="14" height="73" rx="3"/></g>
+ <rect x="267" y="171" width="14" height="97" rx="3" fill="#53865c"/><rect x="287" y="160" width="14" height="108" rx="3" fill="#d7ef73"/>
+ </g>
+ <g>
+ <circle cx="542" cy="178" r="94" fill="#c7dfc7" stroke="#a6cfa9"/>
+ <circle cx="542" cy="178" r="66" stroke="#ecf3e3" fill="none"/><circle cx="542" cy="178" r="37" stroke="#eaf5df" fill="none"/>
+ <rect x="422" y="137" width="238" height="141" rx="10" fill="#fbfdf8" stroke="#cbdac6"/>
+ <text x="439" y="158" font-family="Arial" font-size="10" font-weight="700" fill="#47654d">mellow / inbox</text>
+ <rect x="441" y="170" width="198" height="32" rx="6" fill="#eff3e8" stroke="#d7dfd1"/>
+ <text x="452" y="190" font-family="Arial" font-size="11" font-weight="700" fill="#364f3b">How can we help you?</text>
+ <rect x="490" y="209" width="149" height="27" rx="6" fill="#294c34"/><text x="564" y="227" text-anchor="middle" font-family="Arial" font-size="10" font-weight="700" fill="#f7f9f1">Find my answer</text>
+ <rect x="441" y="243" width="198" height="24" rx="6" fill="#eff3e8" stroke="#d7dfd1"/>
+ </g>
+ <g>
+ <circle cx="947" cy="183" r="143" fill="none" stroke="#749078" stroke-opacity=".28"/><circle cx="947" cy="183" r="92" fill="none" stroke="#749078" stroke-opacity=".25"/>
+ <text x="764" y="116" font-family="Georgia, serif" font-weight="700" font-size="26" letter-spacing="-1" fill="#fff">SORELLE<tspan fill="#d7ef73">.</tspan></text>
+ <text x="764" y="166" font-family="Georgia, serif" font-size="31" fill="#f5f8f2">A table for</text><text x="764" y="201" font-family="Georgia, serif" font-size="31" fill="#f5f8f2">good things.</text>
+ <text x="764" y="246" font-family="Arial" font-size="10" font-weight="800" letter-spacing="1.4" fill="#d7ef73">SEASONAL MENU</text>
+ <g stroke="#a0baa2" stroke-opacity=".5"><path d="M765 264H1030M765 290H1030"/></g>
+ <text x="765" y="283" font-family="Arial" font-size="11" fill="#ecf1e9">Burrata &amp; heirloom tomato</text><text x="1013" y="283" font-family="Arial" font-size="12" font-weight="700" fill="#ecf1e9" text-anchor="end">$19</text>
+ </g>
+ <g>
+ <rect x="1110" y="106" width="289" height="190" rx="10" fill="#1c3828"/>
+ <text x="1128" y="136" font-family="Arial" font-size="10" font-weight="800" letter-spacing="1.1" fill="#d7ef73">WORKFLOW / LIVE</text>
+ <rect x="1128" y="165" width="73" height="82" rx="6" fill="#304d3a" stroke="#65836b"/><rect x="1216" y="165" width="73" height="82" rx="6" fill="#304d3a" stroke="#65836b"/><rect x="1304" y="165" width="73" height="82" rx="6" fill="#304d3a" stroke="#65836b"/>
+ <path d="M1204 206h9m-3-4l4 4-4 4M1292 206h9m-3-4l4 4-4 4" fill="none" stroke="#d7ef73" stroke-width="2"/>
+ <text x="1165" y="187" text-anchor="middle" font-family="Arial" font-size="9" font-weight="800" fill="#d6e7d6">IMPORT</text><text x="1165" y="225" text-anchor="middle" font-family="Arial" font-size="23" font-weight="900" fill="#f3f8ea">05</text>
+ <text x="1253" y="187" text-anchor="middle" font-family="Arial" font-size="9" font-weight="800" fill="#d6e7d6">CLEAN</text><text x="1253" y="226" text-anchor="middle" font-family="Arial" font-size="22" font-weight="900" fill="#d7ef73">↗</text>
+ <text x="1341" y="187" text-anchor="middle" font-family="Arial" font-size="9" font-weight="800" fill="#d6e7d6">EXPORT</text><text x="1341" y="225" text-anchor="middle" font-family="Arial" font-size="23" font-weight="900" fill="#f3f8ea">03</text>
+ </g>
+ <g font-family="Arial, sans-serif">
+  <text x="40" y="352" font-size="32" font-weight="900" letter-spacing="-1.6" fill="#1d3625">MERIDIAN<tspan fill="#568161">.</tspan></text>
+  <text x="40" y="378" font-size="13" fill="#59705c">CRM / pipeline management</text>
+  <text x="396" y="352" font-size="32" font-weight="900" letter-spacing="-1.6" fill="#1d3625">MELLOW<tspan fill="#568161">.</tspan></text>
+  <text x="396" y="378" font-size="13" fill="#59705c">Support / searchable answers</text>
+  <text x="752" y="352" font-size="32" font-weight="900" letter-spacing="-1.6" fill="#f5f8f0">SORELLE<tspan fill="#d7ef73">.</tspan></text>
+  <text x="752" y="378" font-size="13" fill="#b9ccba">Hospitality / booking concept</text>
+  <text x="1109" y="352" font-size="32" font-weight="900" letter-spacing="-1.6" fill="#1d3625">FLOWSTATE<tspan fill="#568161">.</tspan></text>
+  <text x="1109" y="378" font-size="13" fill="#59705c">Automation / CSV engine</text>
+ </g>
+ <g font-family="Arial, sans-serif" font-size="10" font-weight="800" letter-spacing="1.5">
+  <text x="40" y="411" fill="#3b6b47">INTERACTIVE DEMO ↗</text>
+  <text x="396" y="411" fill="#3b6b47">INTERACTIVE DEMO ↗</text>
+  <text x="752" y="411" fill="#d7ef73">INTERACTIVE DEMO ↗</text>
+  <text x="1109" y="411" fill="#3b6b47">SERVER-SIDE API ↗</text>
+ </g>
+</svg>
