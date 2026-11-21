@@ -52,74 +52,54 @@ This project combines expressive editorial typography, quiet motion, practical U
 <table>
 <tr>
 <td width="50%" valign="top">
-
-### 01 / Meridian CRM
-
-**Business intelligence · Sales workflow**
-
-A compact CRM workspace built around useful numbers and editable records.
-
-- Create, search and delete opportunities
-- Update pipeline stages
-- Recalculate active deals, pipeline value and won revenue
-- Export a CSV snapshot
-- Restore demo state in the same browser
-
-<a href="https://northstar-portfolio-studio.vercel.app/case-meridian"><b>Explore the case study ↗</b></a>
-
+<p><strong>01 / MERIDIAN CRM</strong><br/><sub>BUSINESS INTELLIGENCE / SALES WORKFLOW</sub></p>
+<p>A compact CRM workspace built around useful numbers and editable records.</p>
+<ul>
+<li>Create, search and delete opportunities</li>
+<li>Update pipeline stages</li>
+<li>Recalculate active deals, pipeline value and won revenue</li>
+<li>Export a CSV snapshot</li>
+<li>Restore demo state in the same browser</li>
+</ul>
+<p><a href="https://northstar-portfolio-studio.vercel.app/case-meridian"><strong>Explore the case study ↗</strong></a></p>
 </td>
 <td width="50%" valign="top">
-
-### 02 / Mellow Support
-
-**Customer experience · Knowledge retrieval**
-
-A focused help interface that prioritizes clear answers over AI theater.
-
-- Chat with a searchable knowledge base
-- Add and edit knowledge articles
-- Retain demo conversation state
-- Show an explicit fallback for unknown questions
-- Keep a clean, responsive support layout
-
-<a href="https://northstar-portfolio-studio.vercel.app/case-mellow"><b>Explore the case study ↗</b></a>
-
+<p><strong>02 / MELLOW SUPPORT</strong><br/><sub>CUSTOMER EXPERIENCE / KNOWLEDGE RETRIEVAL</sub></p>
+<p>A focused help interface that prioritizes clear answers over AI theater.</p>
+<ul>
+<li>Chat with a searchable knowledge base</li>
+<li>Add knowledge articles</li>
+<li>Retain demo conversation state</li>
+<li>Show an explicit fallback for unknown questions</li>
+<li>Keep a clean, responsive support layout</li>
+</ul>
+<p><a href="https://northstar-portfolio-studio.vercel.app/case-mellow"><strong>Explore the case study ↗</strong></a></p>
 </td>
 </tr>
 <tr>
-<td valign="top">
-
-### 03 / Sorelle
-
-**Hospitality · Reservation concept**
-
-A fictional restaurant experience with a practical booking flow.
-
-- Browse a seasonal sample menu
-- Switch the hero copy between English and Russian
-- Select a date, time and party size
-- Validate booking details and check a demo capacity limit
-- Save simulated reservations for a browser session
-
-<a href="https://northstar-portfolio-studio.vercel.app/case-sorelle"><b>Explore the case study ↗</b></a>
-
+<td width="50%" valign="top">
+<p><strong>03 / SORELLE</strong><br/><sub>HOSPITALITY / RESERVATION CONCEPT</sub></p>
+<p>A fictional restaurant experience with a practical booking flow.</p>
+<ul>
+<li>Browse a seasonal sample menu</li>
+<li>Switch the hero copy between English and Russian</li>
+<li>Select a date, time and party size</li>
+<li>Validate details and check a demo capacity limit</li>
+<li>Save simulated reservations for a browser session</li>
+</ul>
+<p><a href="https://northstar-portfolio-studio.vercel.app/case-sorelle"><strong>Explore the case study ↗</strong></a></p>
 </td>
-<td valign="top">
-
-### 04 / Flowstate
-
-**Data tools · Server-side automation**
-
-A lightweight CSV-cleaning workspace with a real Next.js API route.
-
-- Import a CSV file or paste CSV text
-- Trim whitespace and remove blank records
-- Deduplicate rows while preserving the header
-- Inspect input/output counts and validation errors
-- Download the cleaned CSV file
-
-<a href="https://northstar-portfolio-studio.vercel.app/case-flowstate"><b>Explore the case study ↗</b></a>
-
+<td width="50%" valign="top">
+<p><strong>04 / FLOWSTATE</strong><br/><sub>DATA TOOLS / SERVER-SIDE AUTOMATION</sub></p>
+<p>A lightweight CSV-cleaning workspace with a real Next.js API route.</p>
+<ul>
+<li>Import a CSV file or paste CSV text</li>
+<li>Trim whitespace and remove blank records</li>
+<li>Deduplicate rows while preserving the header</li>
+<li>Inspect input/output counts and validation errors</li>
+<li>Download the cleaned CSV file</li>
+</ul>
+<p><a href="https://northstar-portfolio-studio.vercel.app/case-flowstate"><strong>Explore the case study ↗</strong></a></p>
 </td>
 </tr>
 </table>
