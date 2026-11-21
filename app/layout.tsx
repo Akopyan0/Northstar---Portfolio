@@ -10,6 +10,8 @@ import "./site-pages.css";
 import "./gallery-next.css";
 import "./design-parity.css";
 import "./site-unified.css";
+import "./editorial-refresh.css";
+import SectionMotion from "./SectionMotion";
 
 const origin="https://northstar-portfolio-studio.vercel.app";
 const description="Northstar Studio builds design-forward digital experiences. Explore working demos of a CRM dashboard, customer support workspace, restaurant reservation concept, and data automation tools.";
@@ -52,6 +54,7 @@ export default function RootLayout({children}:{children:React.ReactNode}){
  return <html lang="en" data-theme="forest-citron">
   <body>
    <SiteHeader/>
+   <SectionMotion/>
    {children}
    <SiteFooter/>
    <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(websiteSchema).replace(/</g,"\\u003c")}}/>
